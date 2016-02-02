@@ -1,6 +1,6 @@
 {
   "name": "shasta-router",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "Dead simple logger for shasta",
   "main": "dist/index.js",
   "keywords": [
