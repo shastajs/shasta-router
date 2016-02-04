@@ -19,7 +19,7 @@ npm install shasta-router
 
 ```js
 import { createStore, combineReducers } from 'shasta'
-import { reducer, actions, middleware, enhancer } from 'shasta-router'
+import { reducer, actions, middleware, hook } from 'shasta-router'
 
 let reducers = combineReducers({
   // ... other app stuff
@@ -30,13 +30,11 @@ let reducers = combineReducers({
 // you get the point
 let store = createStore({
   reducer: reducers,
-  enhancers: [
-    enhancer
-  ],
   middleware: [
     middleware
   ]
 })
+hook(store)
 ```
 
 ## API

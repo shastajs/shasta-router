@@ -34,7 +34,7 @@ exports.default = (0, _extends3.default)({}, builtins, {
   reducer: _reactRouterRedux.routeReducer,
   actions: _reactRouterRedux.routeActions,
   middleware: middleware,
-  enhancer: function enhancer(store, getState) {
+  hook: function hook(store, getState) {
     middleware.listenForReplays(store, getState || getRouterState);
     return store;
   }

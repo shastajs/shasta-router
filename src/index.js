@@ -29,7 +29,7 @@ export default {
   reducer: routeReducer,
   actions: routeActions,
   middleware: middleware,
-  enhancer: (store, getState) => {
+  hook: (store, getState) => {
     middleware.listenForReplays(store, getState || getRouterState)
     return store
   }
