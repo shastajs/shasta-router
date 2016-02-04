@@ -19,7 +19,7 @@ npm install shasta-router
 
 ```js
 import { createStore, combineReducers } from 'shasta'
-import { reducer, actions, middleware, listenForReplays } from 'shasta-router'
+import { reducer, actions, middleware, enhancer } from 'shasta-router'
 
 let reducers = combineReducers({
   // ... other app stuff
@@ -30,12 +30,13 @@ let reducers = combineReducers({
 // you get the point
 let store = createStore({
   reducer: reducers,
+  enhancers: [
+    enhancer
+  ],
   middleware: [
     middleware
   ]
 })
-
-listenForReplays(store) // optional, hooks it up to devtools
 ```
 
 ## API
@@ -44,7 +45,7 @@ listenForReplays(store) // optional, hooks it up to devtools
 - actions
 - reducer
 - middleware
-- listenForReplays
+- enhancer
 
 ### Components
 
