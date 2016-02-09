@@ -29,7 +29,9 @@ export default {
   reducers: {
     router: routeReducer
   },
-  actions: routeActions,
+  actions: {
+    router: routeActions
+  },
   middleware: middleware,
   hook: (store, getState) => {
     middleware.listenForReplays(store, getState || getRouterState)
