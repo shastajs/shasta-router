@@ -31,7 +31,9 @@ var getRouterState = function getRouterState(state) {
 
 exports.default = (0, _extends3.default)({}, builtins, {
   history: _reactRouter.browserHistory,
-  reducer: _reactRouterRedux.routeReducer,
+  reducers: {
+    router: _reactRouterRedux.routeReducer
+  },
   actions: _reactRouterRedux.routeActions,
   middleware: middleware,
   hook: function hook(store, getState) {

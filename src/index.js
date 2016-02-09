@@ -26,7 +26,9 @@ const getRouterState = (state) => state.get('router').location
 export default {
   ...builtins,
   history: browserHistory,
-  reducer: routeReducer,
+  reducers: {
+    router: routeReducer
+  },
   actions: routeActions,
   middleware: middleware,
   hook: (store, getState) => {
