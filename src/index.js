@@ -1,5 +1,4 @@
 import { routeActions, syncHistory, routeReducer } from 'react-router-redux'
-import { fromJS } from 'immutable'
 import {
   browserHistory,
   Router,
@@ -10,6 +9,8 @@ import {
   IndexLink,
   IndexRedirect
 } from 'react-router'
+
+const moduleName = 'router'
 
 const builtins = {
   Router,
@@ -22,19 +23,16 @@ const builtins = {
 }
 
 const middleware = syncHistory(browserHistory)
-const getRouterState = (state) => {
-  const routerState = state.getIn([ 'router', 'location' ])
-  return routerState ? undefined : routerState.toJS()
-}
+const getRouterState = (state) => state.get(moduleName)
 
 export default {
   ...builtins,
   history: browserHistory,
   reducers: {
-    router: (...args) => fromJS(routeReducer(...args))
+    [moduleName]: routeReducer
   },
   actions: {
-    router: routeActions
+    [moduleName]: routeActions
   },
   middleware: middleware,
   hook: (store) => {
