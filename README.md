@@ -12,27 +12,19 @@ npm install shasta-router
 
 ## Get Started
 
-- Add the reducers to your app reducer
-  - Router state will be under `router` in your store
-- Add the middleware to your store
+- Import in the module
+- Add it to your store's plugins
+- Router state is now under `router` in your store
 
 ### ES6 Example
 
 ```js
 import { createStore, combineReducers } from 'shasta'
-import { reducers, actions, middleware, hook } from 'shasta-router'
-
-let reducer = combineReducers(
-  // ... other app stuff
-  , reducers
-)
+import * as router from 'shasta-router'
 
 // you get the point
 let store = createStore({
-  reducer: reducer,
-  middleware: [
-    middleware
-  ]
+  plugins: [ router ]
 })
 hook(store)
 ```
@@ -43,7 +35,7 @@ hook(store)
 - actions
 - reducers
 - middleware
-- enhancer
+- hook
 
 ### Components
 
