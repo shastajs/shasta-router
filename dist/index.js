@@ -32,7 +32,7 @@ var builtins = {
 
 var middleware = (0, _reactRouterRedux.syncHistory)(_reactRouter.browserHistory);
 var getRouterState = function getRouterState(state) {
-  return state.get(moduleName);
+  return state.get(moduleName).location;
 };
 
 exports.default = (0, _extends3.default)({}, builtins, {

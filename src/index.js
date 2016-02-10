@@ -23,7 +23,7 @@ const builtins = {
 }
 
 const middleware = syncHistory(browserHistory)
-const getRouterState = (state) => state.get(moduleName)
+const getRouterState = (state) => state.get(moduleName).location
 
 export default {
   ...builtins,
